@@ -7,6 +7,14 @@ var server = app.listen(4000, function(){
     console.log('listening for requests on port 4000,');
 });
 
+const corsOptions = {
+  allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'access-control-allow-origin', 'appname', 'portalname'],
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  // preflightContinue: false
+}
+
+app.use(cors(corsOptions))
 // Static files
 app.use(express.static('public'));
 
