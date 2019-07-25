@@ -1,8 +1,9 @@
 var express = require('express');
 var socket = require('socket.io');
+var app = express();
+var cors = require('cors');
 
 // App setup
-var app = express();
 var server = app.listen(4000, function(){
     console.log('listening for requests on port 4000,');
 });
